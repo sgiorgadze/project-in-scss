@@ -1,0 +1,146 @@
+@import "partials/params";
+@import "partials/mixins";
+$border-color:$buy-border-color;
+
+.package {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+
+    &_img {}
+
+    &_tiles {
+        display: flex;
+        justify-content: space-around;
+        margin-top: -300px;
+        margin-bottom: 80px;
+        height: 600px;
+    }
+
+    &_tile {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        // width: 18%;
+        padding: 20px;
+        background-color: #fff;
+        width: 200px;
+        margin-right: 60px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+
+        &::before {
+            position: absolute;
+            display: block;
+            content: '';
+            left: 0;
+            top: 0;
+            height: 5px;
+            width: 100%;
+
+        }
+
+        &-yellow {
+            @include package-color($yellow);
+
+            &:before {
+                background-color: $yellow;
+            }
+        }
+
+        &-grey {
+            @include package-color($grey);
+
+            &:before {
+                background-color: $grey;
+            }
+        }
+
+        &-red {
+            @include package-color($red);
+
+            &:before {
+                background-color: $red;
+            }
+        }
+
+        &-green {
+            @include package-color($green);
+
+            &:before {
+                background-color: $green;
+            }
+        }
+
+
+
+
+        & .tile_img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin: 15px auto;
+
+        }
+
+        & .tile_title {
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+
+        }
+
+        & .tile_list {
+            @include clear-list;
+            padding: 20px 0;
+            border-top: 1px solid $border-color;
+            border-bottom: 1px solid $border-color;
+        }
+
+        & .tile_item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+
+            & .item_key {
+                opacity: 0.5;
+            }
+
+            & .item_value {}
+
+        }
+
+        & .tile_footer {
+            @include flex-center;
+            flex-grow: 1;
+
+        }
+
+        & .tile_cost {
+            padding: 5px;
+            margin-bottom: 10px;
+            border-bottom: 4px solid;
+
+            & .cost_price {
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            & .cost_date {
+                font-size: 10px;
+                opacity: 0.7;
+            }
+        }
+
+        & .tile_plan {
+            text-transform: uppercase;
+        }
+
+
+    }
+
+    &_border {
+        border-bottom: 3px dotted $border-color;
+    }
+}

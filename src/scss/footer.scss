@@ -1,0 +1,105 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.footer {
+    background-color: $footer-bg-color;
+    color: $footer-color;
+    padding-bottom: 20px;
+
+
+    &_header {
+        display: flex;
+        justify-content: space-between;
+        padding: 30px 0;
+        border-bottom: 1px solid $footer-color;
+    }
+
+    &_brand {
+        font-weight: bold;
+    }
+
+    &_nav {
+        @include clear-list;
+        display: flex;
+
+
+        & .nav_item {
+            margin: 0 10px;
+            font-size: 14px;
+
+        }
+
+        & .nav_link {
+            text-transform: uppercase;
+            color: $footer-color;
+            transition: .3s all;
+
+            &:hover {
+                color: #fff;
+            }
+        }
+
+    }
+
+    &_content {
+        display: flex;
+        padding: 20px 0;
+        line-height: 1.7;
+        font-size: 12px;
+
+    }
+
+    &_block {
+        width: (100%/3);
+        padding: 20px;
+    }
+
+    &_text {}
+
+    &_map {
+        display: flex;
+        padding: 0 30px;
+        border-right: 1px solid $footer-color;
+        border-left: 1px solid $footer-color;
+    }
+
+    &_list {
+        @include clear-list;
+        width: 50%;
+
+
+        & .list_item {
+            padding: 5px;
+
+            &:hover {
+                color: #fff;
+
+                .list_link {
+                    color: #fff;
+                    margin-left: 10px;
+                }
+            }
+
+        }
+
+        & .list_icon {}
+
+        & .list_link {
+            margin-left: 5px;
+            color: $footer-color;
+            transition: .3s margin-left;
+
+        }
+    }
+
+    &_contact {
+
+        & .contact_item {
+            margin-bottom: 5px;
+        }
+
+        & .contact_icon {
+            margin-right: 7px;
+        }
+    }
+}
